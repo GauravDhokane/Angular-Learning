@@ -1,17 +1,19 @@
 import { Component, signal } from '@angular/core';
+import { Login } from './login/login';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [Login],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-//Interpolation
+//Components
 /*
-  used to pass small data from TS file to html
-  we can perform js operations and functions using interpolation
-  Interpolation works only in templateUrl html file
-  we can not declare variable , can not increment or decrement variables in interpolation
+  Fundamental building block of webpage
+  ng g c login ->command to make component
+  It can be used fot multiple times in webpage
+  For calling it in html file, we need to use selector name in tag in parent component html file
+  and we need to import the component
 */
 export class App {
   protected readonly title = signal('Angular-1st-Project');
