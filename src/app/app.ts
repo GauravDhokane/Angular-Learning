@@ -8,25 +8,40 @@ import { Login } from './login/login';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-//Data types in Angular
+//Counter app
 /*
-  Properties and data types are 2 diff things
-  Properties are the variables which we define in class where data type is the type of that properties
+ Learning incremenr decrement and reset using function click
 */
 export class App {
   protected readonly title = signal('Angular-1st-Project');
+  count=0;
+  //Using 3 diff function
+  // handleIncrement(){
+  //   this.count=this.count+1;
+  // }
+  // resetfun(){
+  //   this.count=0;
+  // }
+  // handledecrement(){
+  //   if(this.count>0){
+  //     this.count=this.count-1;
+  //   }
+  // }
 
-  name="Gaurav";//by default angular decides data type of name as string
-  num=10;//data type of num is number;
-  data:string|boolean = "tata";//we can assign both type of values string as well as boolean to data
-  data2:any = 20;// we can assign any type of data to data2
-
-  updatevars(){
-    //this.name=20;<- this will give error
-    this.data2 = "tata";//it is accepting this
+  //using 1 function
+  handlecounter(val:string){
+    if(val=='minus')
+    {
+      if(this.count>0){
+        this.count--;
+      }
+    }
+    else if(val=='plus'){
+      this.count++;
+    }
+    else{
+      this.count=0;
+    }
   }
 
-  sum(a:number,b:number){//need to pass same type of data to call this function
-    console.log(a+b);
-  }
 }
