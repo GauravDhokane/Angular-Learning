@@ -1,23 +1,27 @@
 import { Component, signal } from '@angular/core';
 import { Login } from './login/login';
 
+//below is known as Decorator ->@Component{}
 @Component({
   selector: 'app-root',
   imports: [Login],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-//Components
+//Click Event on button
 /*
-  Fundamental building block of webpage
-  ng g c login ->command to make component
-  It can be used fot multiple times in webpage
-  For calling it in html file, we need to use selector name in tag in parent component html file
-  and we need to import the component
+  Click event on btn , for that we have made 2 function
+  to make click event on that function, we need to pass that function
+  as full fun name with parameters
 */
 export class App {
   protected readonly title = signal('Angular-1st-Project');
-  name="Gaurav";
-  a=10;
-  b=20;
+
+  handleClickEvent(){
+    console.log("Button Clicked!!")
+    this.handleClickEvent2();//We have to use this is want to call function from same class
+  }
+  handleClickEvent2(){
+    console.log("2nd function called");
+  }
 }
