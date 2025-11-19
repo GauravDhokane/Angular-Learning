@@ -1,23 +1,16 @@
-<h1>Diff types of Events</h1>
-<button class="btn" name="login" (click)="handleeventfunccall($event)">click me!!</button>
+<h1>Get and Set input field value</h1>
+<h2>user name is:{{displayname}}</h2>
+<input type="text" value="{{name}}" placeholder="Enter value" (input)="getName($event)">
 <br>
 <br>
-
-<div
-(mouseenter)="handleeventfunccall($event)"
-style="background-color: green;width: 100px;height: 100px;">
-
-</div>
-
-<div
-(mouseleave)="handleeventfunccall($event)"
-style="background-color: red;width: 100px;height: 100px;">
-
-</div>
+<button (click)="showName()">Get Value</button>
+<button (click)="setName()">Set Value</button>
 
 <br>
 <br>
-<input type="text" name="Enter anything"
-  (input)="handleeventfunccall($event)"
-  (blur)="handleeventfunccall($event)"
-  (focus)="handleeventfunccall($event)">
+<h2>Email is:{{displayemail}}</h2>
+<input type="text" value="{{email}}" placeholder="Enter email" (input)="getEmail($event)">
+<br>
+<br>
+<button (click)="showEmail()">Get Email</button>
+<button (click)="setEmail()">Set Email</button>

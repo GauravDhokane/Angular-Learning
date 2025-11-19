@@ -14,11 +14,29 @@ import { Login } from './login/login';
 */
 export class App {
   protected readonly title = signal('Angular-1st-Project');
-  count=0;
-  handleeventfunccall(event:Event){//event:any also ok but should give actual eventname like MouseEvent
-    //console.log("function called!!",event);// all info of event
-    console.log("function called!!",event.type);//getting name of event
-    console.log("function called",event.target);// getting btn on which click event occured
+  name="";
+  displayname="";
+  getName(event:Event){
+    const val=(event.target as HTMLInputElement).value;
+    this.name=val;
+  }
+  showName(){
+    this.displayname=this.name;
+  }
+  setName(){
+    this.name="Gaurav";
   }
 
+  email="";
+  displayemail="";
+  getEmail(event:Event){
+    const val=(event.target as HTMLInputElement).value;
+    this.email=val;
+  }
+  showEmail(){
+    this.displayemail=this.email;
+  }
+  setEmail(){
+    this.email="Gaurav.dhokane@zoho.com";
+  }
 }
