@@ -8,40 +8,17 @@ import { Login } from './login/login';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-//Counter app
+//Diff types of Event
 /*
- Learning incremenr decrement and reset using function click
+  Learn about event
 */
 export class App {
   protected readonly title = signal('Angular-1st-Project');
   count=0;
-  //Using 3 diff function
-  // handleIncrement(){
-  //   this.count=this.count+1;
-  // }
-  // resetfun(){
-  //   this.count=0;
-  // }
-  // handledecrement(){
-  //   if(this.count>0){
-  //     this.count=this.count-1;
-  //   }
-  // }
-
-  //using 1 function
-  handlecounter(val:string){
-    if(val=='minus')
-    {
-      if(this.count>0){
-        this.count--;
-      }
-    }
-    else if(val=='plus'){
-      this.count++;
-    }
-    else{
-      this.count=0;
-    }
+  handleeventfunccall(event:Event){//event:any also ok but should give actual eventname like MouseEvent
+    //console.log("function called!!",event);// all info of event
+    console.log("function called!!",event.type);//getting name of event
+    console.log("function called",event.target);// getting btn on which click event occured
   }
 
 }
