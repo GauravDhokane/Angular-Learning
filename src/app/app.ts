@@ -8,35 +8,25 @@ import { Login } from './login/login';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-//Diff types of Event
+//if else in angular
 /*
-  Learn about event
+
 */
 export class App {
   protected readonly title = signal('Angular-1st-Project');
-  name="";
-  displayname="";
-  getName(event:Event){
-    const val=(event.target as HTMLInputElement).value;
-    this.name=val;
+  display=true;
+  show(){
+    this.display=true;
   }
-  showName(){
-    this.displayname=this.name;
+  hide(){
+    this.display=false;
   }
-  setName(){
-    this.name="Gaurav";
+  toggle(){
+    this.display=!this.display;
   }
 
-  email="";
-  displayemail="";
-  getEmail(event:Event){
-    const val=(event.target as HTMLInputElement).value;
-    this.email=val;
-  }
-  showEmail(){
-    this.displayemail=this.email;
-  }
-  setEmail(){
-    this.email="Gaurav.dhokane@zoho.com";
+  display2=true;
+  toggle2(){
+    this.display2=!this.display2;
   }
 }

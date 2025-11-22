@@ -1,16 +1,24 @@
-<h1>Get and Set input field value</h1>
-<h2>user name is:{{displayname}}</h2>
-<input type="text" value="{{name}}" placeholder="Enter value" (input)="getName($event)">
-<br>
-<br>
-<button (click)="showName()">Get Value</button>
-<button (click)="setName()">Set Value</button>
+<h1>If else conditions in Angular</h1>
+<button (click)="show()">show</button>
+<button (click)="hide()">hide</button>
+<button (click)="toggle()">Toggle</button>
 
-<br>
-<br>
-<h2>Email is:{{displayemail}}</h2>
-<input type="text" value="{{email}}" placeholder="Enter email" (input)="getEmail($event)">
-<br>
-<br>
-<button (click)="showEmail()">Get Email</button>
-<button (click)="setEmail()">Set Email</button>
+@if(display){
+  <div style="width: 100px; height: 100px; background-color: blueviolet;">
+
+  </div>
+}
+<hr>
+
+<button (click)="toggle2()">{{display2?'Show yellow color':'Show red color'}}</button>
+@if(display2){
+  <div style="width: 100px; height: 100px; background-color: red;">
+
+  </div>
+}
+@else{
+  <div style="width: 100px; height: 100px; background-color: yellow;">
+
+  </div>
+}
+
