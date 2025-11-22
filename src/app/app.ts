@@ -14,19 +14,20 @@ import { Login } from './login/login';
 */
 export class App {
   protected readonly title = signal('Angular-1st-Project');
-  display=true;
-  show(){
-    this.display=true;
-  }
-  hide(){
-    this.display=false;
-  }
-  toggle(){
-    this.display=!this.display;
-  }
-
-  display2=true;
-  toggle2(){
-    this.display2=!this.display2;
+  display=1;
+  handlecolor(val:number){
+    if(val==1)
+    {
+      this.display=1;
+    }
+    else if(val==2){
+      this.display=2;
+    }
+    else if(val==3){
+      this.display=3;
+    }
+    else {
+      this.display=10;
+    }
   }
 }

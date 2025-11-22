@@ -1,24 +1,29 @@
 <h1>If else conditions in Angular</h1>
-<button (click)="show()">show</button>
-<button (click)="hide()">hide</button>
-<button (click)="toggle()">Toggle</button>
+<button (click)="handlecolor(1)">red</button>
+<button (click)="handlecolor(2)">blue</button>
+<button (click)="handlecolor(3)">yellow</button>
+<button (click)="handlecolor(10)">other</button>
 
-@if(display){
-  <div style="width: 100px; height: 100px; background-color: blueviolet;">
+@if(display==1){
+  <div style="width: 100px; height: 100px; background-color: red;">
+
+  </div>
+}
+@else if(display==2){
+  <div style="width: 100px; height: 100px; background-color: blue;">
+
+  </div>
+}
+@else if(display==3){
+  <div style="width: 100px; height: 100px; background-color: yellow;">
+
+  </div>
+}
+@else{
+  <div style="width: 100px; height: 100px; background-color: cyan;">
 
   </div>
 }
 <hr>
 
-<button (click)="toggle2()">{{display2?'Show yellow color':'Show red color'}}</button>
-@if(display2){
-  <div style="width: 100px; height: 100px; background-color: red;">
-
-  </div>
-}
-@else{
-  <div style="width: 100px; height: 100px; background-color: yellow;">
-
-  </div>
-}
 
