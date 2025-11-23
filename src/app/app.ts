@@ -8,26 +8,21 @@ import { Login } from './login/login';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-//if else in angular
+//Switch in angular
 /*
-
+  widely used in many conditions and have default statement also
+  but we need to pass variable for which we are checking the values
 */
 export class App {
   protected readonly title = signal('Angular-1st-Project');
-  display=1;
-  handlecolor(val:number){
-    if(val==1)
-    {
-      this.display=1;
-    }
-    else if(val==2){
-      this.display=2;
-    }
-    else if(val==3){
-      this.display=3;
-    }
-    else {
-      this.display=10;
-    }
+  backcolor='red';
+
+  handlecolor(val:string){
+    this.backcolor=val;
   }
+
+  handlecolorinput(event:Event){
+    this.backcolor=(event.target as HTMLInputElement).value;
+  }
+
 }
