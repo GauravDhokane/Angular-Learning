@@ -1,25 +1,16 @@
-<h1>Switch conditions in Angular</h1>
-<button (click)="handlecolor('red')">red</button>
-<button (click)="handlecolor('blue')">blue</button>
-<button (click)="handlecolor('yellow')">yellow</button>
-<button (click)="handlecolor('black')">other</button>
-<input type="text" placeholder="Enter color" (input)="handlecolorinput($event)">
+<h1>for loop in angular</h1>
 
-@switch(backcolor){
-  @case('red'){
-    <h1 style="background-color: red;">Red Color</h1>
-  }
-  @case('blue'){
-    <h1 style="background-color: blue;">Blue Color</h1>
-  }
-  @case('yellow'){
-    <h1 style="background-color: Yellow;">Yellow Color</h1>
-  }
-  @default{
-    <h1 style="background-color: black;color: antiquewhite;">No color match</h1>
-  }
+@for(user of users; track user){
+  <h2>{{user}}</h2>
 }
-
 <hr>
 
-
+@for(std of students;track std.name; let id=$index){
+    <span>{{id}}</span>
+    <h2>
+      <span>{{std.name}}</span>
+      <span>{{std.age}}</span>
+      <span>{{std.email}}</span>
+      <button (click)="GetName(std.name)">GetName</button>
+    </h2>
+}
