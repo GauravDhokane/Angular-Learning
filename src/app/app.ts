@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, effect, signal } from '@angular/core';
 import { Login } from './login/login';
 
 //below is known as Decorator ->@Component{}
@@ -8,22 +8,25 @@ import { Login } from './login/login';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-//ForLoop in angular
+//Signals in angular
 /*
-  widely used in many conditions and have default statement also
-  but we need to pass variable for which we are checking the values
+  Signal is a wrapper around a value that gives a signal when value changes
+  signals are reactive and it gives call when value changes
+  2 types
+  writable and computable
 */
 export class App {
   protected readonly title = signal('Angular-1st-Project');
-  users=["gaurav","dhokane","bunty","tata"];
 
-  students=[
-    {name:"garry",age:29,email:"@garry.com"},
-    {name:"suru",age:21,email:"@suru.com"},
-    {name:"harry",age:24,email:"@harry.com"}
-  ]
+  count= signal(10);
+  x=20;
 
-  GetName(val:string){
-    console.log(val);
+  constructor(){
+    effect(()=>{
+      console.log(this.count());//this is the effect which tells us when the value of count has been changed
+    })
+  }
+  updatevalue(){
+    this.count.set(this.count()+1);//increment by 1
   }
 }
