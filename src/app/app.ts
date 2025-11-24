@@ -1,4 +1,4 @@
-import { Component, effect, signal, WritableSignal } from '@angular/core';
+import { Component, computed, effect, signal, WritableSignal } from '@angular/core';
 import { Login } from './login/login';
 
 //below is known as Decorator ->@Component{}
@@ -10,18 +10,23 @@ import { Login } from './login/login';
 })
 //Signals in angular
 /*
-  Signal and its value are 2 diff things
-  We can set the data type of signal as well as its value
+  Computed Signals are read only signals, but updates when it depends on other signals
 */
 export class App {
   protected readonly title = signal('Angular-1st-Project');
 
-  data : WritableSignal<number|string> = signal<number|string>(10);// we set data type of both signal and its data
+  x=signal(10);
+  y=signal(20);
+  z=computed(()=>this.x()+this.y());
 
   updatesignal(){
-    this.data.set("hello");
+    console.log(this.z());
+    //this.z.set(200);->this will give error
+    this.x.set(100);
+    console.log(this.z());//here it updates value of z as value of x is updating
+    // but if we use simple variable then value of z will nnot updates because addition has been done before
+    //value change of x
 
-    //this.data.update((val)=>val+1)// this in 2nd method of updating signal but it has some limitations
   }
 
 }
