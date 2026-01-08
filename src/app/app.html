@@ -1,23 +1,3 @@
-<h1>Contextual Variable in angular</h1>
-@for(user of users; track user;
-  let i = $index;
-  let j = $first;
-  let k = $last
-  ){
-    @if($odd){
-      <h2 style="background-color: yellow;">this is {{i+1}} and name is {{user}}</h2>
-    }
-    @if($even){
-      <h2 style="background-color: green;">this is {{i+1}} and name is {{user}}</h2>
-    }
-    @if(j){
-      <h2 style="background-color: red;">this is {{i+1}} and name is {{user}}</h2>
-    }
-    @else if(k){
-      <h2 style="background-color: gray;">this is {{i+1}} and name is {{user}}</h2>
-    }
-    <h3>Count: {{$count}}</h3>
-}
-@empty{
-  <h1>No record found</h1>
-}
+<h1>Two Way Binding</h1>
+<input [(ngModel)]="name" type="text" placeholder="enter name">
+<h2>{{name}}</h2>
