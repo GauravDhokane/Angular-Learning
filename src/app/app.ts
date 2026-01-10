@@ -9,22 +9,14 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-//Two way binding
+//Dynamic styling
 /*
 
 */
 export class App {
-  task="";
-  tasklist:{id:number,task:string}[]=[];
+  bgcolor="red";
+  fontSize="30px";
 
-  addTask(){
-    this.tasklist.push({id:this.tasklist.length+1,task:this.task});
-    this.task="";
-    console.log(this.tasklist);
-  }
-  deletetask(index:number){
-    this.tasklist.splice(index-1, 1);
-    //splice() function taking 1st parameter as
-    //index and 2nd parameter as no of elements to remove starting from that index
-  }
+  headingsizebig="80px";
+  headingsizesmall="30px";
 }
