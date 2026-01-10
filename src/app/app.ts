@@ -1,34 +1,22 @@
 import { Component, computed, effect, signal, WritableSignal } from '@angular/core';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 
 //below is known as Decorator ->@Component{}
 @Component({
   selector: 'app-root',
-  imports: [NgFor],
+  imports: [NgFor,NgIf],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-//ngfor Directives In Angular
+//ngIf Directives In Angular
 /*
- we can loop in our template file using this (html file)
+ we can apply if else using ngif
 */
 export class App {
-  students=["anil","peter","gaurav","tata","bata"];
-  studentdata=[
-    {
-      name:"garry",
-      age:20,
-      city:"Pune"
-    },
-    {
-      name:"harry",
-      age:21,
-      city:"Mumbai"
-    },
-    {
-      name:"toty",
-      age:23,
-      city:"Nagar"
-    }
-  ];
+  show=true;
+  login=false;
+  val=0;
+  Incre(){
+    this.val++;
+  }
 }
