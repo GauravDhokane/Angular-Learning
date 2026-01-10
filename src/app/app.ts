@@ -9,14 +9,16 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-//Dynamic styling
+//Directives In Angular
 /*
-
+ Directives is a class which adds additional behaviour to element in application
+ provide more power to dom element
+ if-else condition
+ ngclass,ngfor,ngif
+ component directives
+ structural directives
+ attribute directived
 */
 export class App {
-  bgcolor="red";
-  fontSize="30px";
 
-  headingsizebig="80px";
-  headingsizesmall="30px";
 }
