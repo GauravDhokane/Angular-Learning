@@ -1,18 +1,20 @@
 import { Component, computed, effect, signal, WritableSignal } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { Header } from './header/header';
 
 
 //below is known as Decorator ->@Component{}
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,RouterLink],
+  imports: [RouterOutlet,RouterLink,Header],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-// Routing In Angular
+// Header in routing
 /*
-  Mechanism of Going from one page to another page
-  Check official website of Angular
+  Header in routing
+  router link active option
+
 */
 export class App {
 
