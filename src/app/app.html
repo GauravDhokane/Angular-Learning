@@ -1,19 +1,15 @@
-<h1>ngIf  directives </h1>
-<h2 *ngIf="show">heading</h2>
+<h1>ngSwitch directives </h1>
 
-<div *ngIf="login; else elseBlock">
-  <a href="/">Login</a>
-</div>
-<ng-template #elseBlock>
-  <a href="/">LogOut</a>
-</ng-template>
-<br>
-<br>
-<button (click)="Incre()">Increment</button>
-<div *ngIf="val==0;else elseBlock2">
-  <h3>heading 0</h3>
-</div>
-<ng-template #elseBlock2>
-  <h3>heading {{val}}</h3>
-</ng-template>
+<button (click)="Changecolor('red')">red</button>
+<button (click)="Changecolor('blue')">blue</button>
+<button (click)="Changecolor('yellow')">yellow</button>
+<button (click)="Changecolor('green')">green</button>
+<button (click)="Changecolor('violet')">violet</button>
 
+<div [ngSwitch]="color">
+<h1 *ngSwitchCase="'red'" style="background-color: red;">Red color</h1>
+<h1 *ngSwitchCase="'blue'" style="background-color: blue;">blue color</h1>
+<h1 *ngSwitchCase="'yellow'" style="background-color: yellow;">yellow color</h1>
+<h1 *ngSwitchCase="'green'" style="background-color: green;">green color</h1>
+<h1 *ngSwitchCase="'violet'" style="background-color: violet;">violet color</h1>
+</div>
