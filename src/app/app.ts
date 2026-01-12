@@ -6,14 +6,13 @@ import { Header } from './header/header';
 //below is known as Decorator ->@Component{}
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,RouterLink,Header],
+  imports: [RouterOutlet,Header],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-// Header in routing
+// Pass data between pages in Angular
 /*
-  Header in routing
-  router link active option
+  404 error and page not found error
 
 */
 export class App {
