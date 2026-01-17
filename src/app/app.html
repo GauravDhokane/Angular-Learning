@@ -1,2 +1,14 @@
-
-
+<h1>Forms in Angular</h1>
+<h2>Basic of reactive forms</h2>
+<form action="" method="post" >
+  <input type="text" placeholder="Enter Name" [formControl]="name">
+  <br>
+  <br>
+  <input type="text" placeholder="Enter Password" [formControl]="password">
+  <br>
+  <br>
+  <button type="button" (click)="displayValue()">Login</button>
+  <button type="button" (click)="setValues()">Setting the values</button>
+  <h3>{{name.value}}</h3>
+  <h3>{{password.value}}</h3>
+</form>
