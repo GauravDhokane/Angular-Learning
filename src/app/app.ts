@@ -1,5 +1,5 @@
 import { Component, computed, effect, signal, WritableSignal } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink, RouterOutlet } from '@angular/router';
 
 
@@ -11,21 +11,26 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-// Basic reactive Forms in Angular
+// Reactive form grouping
 /*
-  when we have to deal with complex forms then we need to check it
-  what is formcontrol and reactiveforms we need to check that
+  FormGroup read about this
 
 */
 export class App {
-  name=new FormControl();//we can give default value also here in the brackets with single inverted quoma
-  password = new FormControl();
-  displayValue(){
-    console.log(this.name.value);
-    console.log(this.password.value);
+
+  Profilegrp = new FormGroup({
+     name:new FormControl('Gaurav'),//we can give default value also here in the brackets with single inverted quoma
+     password:new FormControl('tata@123'),//this are the default values
+     email:new FormControl('garry@zoho.com')
+  })
+  submit(){
+    console.log(this.Profilegrp.value);
   }
-  setValues(){
-    this.name.setValue('Gaurav');
-    this.password.setValue('32416272');
+  setvalues(){
+    this.Profilegrp.setValue({
+      name:'peter',
+      password:'peteer@123',
+      email:'ptata@gmail.com'
+    });
   }
 }
