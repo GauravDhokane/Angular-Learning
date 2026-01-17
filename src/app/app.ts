@@ -10,9 +10,12 @@ import { Header } from './header/header';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-// Pass data between pages in Angular
+// Forms in Angular
 /*
-  404 error and page not found error
+  2 types of forms
+  reactive and template driven forms-> check official website
+  Simple type of forms - template driven
+  complex type of forms and validations then reactive forms
 
 */
 export class App {
