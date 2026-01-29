@@ -1,21 +1,23 @@
 <h1>Forms in Angular</h1>
-<h2>Form grouping</h2>
-<form  [formGroup]="Profilegrp" (ngSubmit)="submit()">
-  <input type="text" placeholder="Enter Name" formControlName="name">
-  <span *ngIf="name?.hasError('required')">Name required</span>
-  <span class="error" *ngIf="name?.invalid && (name?.dirty || name?.touched)">Provide right name</span>
-  <br>
-  <br>
-  <input type="text" placeholder="Enter Password" formControlName="password">
-  <span *ngIf="password?.hasError('required')">Password required</span>
-  <span class="error" *ngIf="password?.invalid && (password?.dirty || password?.touched)">Provide right password</span>
-  <br>
-  <br>
-  <input type="text" placeholder="Enter email" formControlName="email">
-  <span *ngIf="email?.hasError('required')">email required</span>
-  <span class="error" *ngIf="email?.invalid && (email?.dirty || email?.touched)">Provide right email</span>
-  <br>
-  <br>
-  <button type="button" (click)="submit()">Login</button>
-  <button type="button" (click)="setvalues()">Set Values</button>
+<h2>Template Driven Form</h2>
+<form #userform="ngForm" (ngSubmit)="adddetails(userform.value)">
+  <input type="text" placeholder="Enter Name" name="name" ngModel>
+  <br><br>
+  <input type="password" placeholder="Enter Password" name="password" ngModel>
+  <br><br>
+  <select name="gender" ngModel>
+    <option value="">Select gender</option>
+    <option value="male">male</option>
+    <option value="female">female</option>
+  </select>
+  <br><br>
+  <input type="range" min="0" max="20" name="range" ngModel>
+  <br><br>
+  <button>Add user</button>
 </form>
+
+<h3>{{userdetails?.name}}</h3>
+<h3>{{userdetails?.password}}</h3>
+<h3>{{userdetails?.gender}}</h3>
+<h3>{{userdetails?.range}}</h3>
+

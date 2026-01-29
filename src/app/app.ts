@@ -1,45 +1,27 @@
 import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
 
 
 //below is known as Decorator ->@Component{}
 @Component({
   selector: 'app-root',
-  imports: [ReactiveFormsModule,NgIf],
+  imports: [ReactiveFormsModule,FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-// Reactive form Vaidations
+// Template driven forms in Angular
 /*
-  Validations
+  the froms which is completly controlled from HTML file only
+  this is widely used for basic forms only not complexed
+
 
 */
 export class App {
+  userdetails:any;
 
-  Profilegrp = new FormGroup({
-     name:new FormControl('',[Validators.required]),//we can give default value also here in the brackets with single inverted quoma
-     password:new FormControl('',[Validators.required,Validators.minLength(5)]),//this are the default values
-     email:new FormControl('',[Validators.required,Validators.maxLength(20),Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')]),
-  })
-  //getter method of all props
-  get name(){
-    return this.Profilegrp.get('name');
-  }
-  get password(){
-    return this.Profilegrp.get('password');
-  }
-  get email(){
-    return this.Profilegrp.get('email');
-  }
-  submit(){
-    console.log(this.Profilegrp.value);
-  }
-  setvalues(){
-    this.Profilegrp.setValue({
-      name:'peter',
-      password:'peteer@123',
-      email:'ptata@gmail.com'
-    });
+  adddetails(val:NgForm){
+    console.log(val);
+    this.userdetails = val;
   }
 }
