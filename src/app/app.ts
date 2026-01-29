@@ -6,7 +6,7 @@ import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Valid
 //below is known as Decorator ->@Component{}
 @Component({
   selector: 'app-root',
-  imports: [ReactiveFormsModule,FormsModule],
+  imports: [ReactiveFormsModule,FormsModule,NgIf],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
@@ -14,6 +14,7 @@ import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Valid
 /*
   the froms which is completly controlled from HTML file only
   this is widely used for basic forms only not complexed
+  //validations in template driven forms
 
 
 */

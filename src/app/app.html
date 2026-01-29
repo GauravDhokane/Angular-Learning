@@ -1,19 +1,22 @@
 <h1>Forms in Angular</h1>
 <h2>Template Driven Form</h2>
 <form #userform="ngForm" (ngSubmit)="adddetails(userform.value)">
-  <input type="text" placeholder="Enter Name" name="name" ngModel>
+  <input #name="ngModel" type="text" required placeholder="Enter Name" name="name" ngModel>
+  <span class="error" *ngIf="name.invalid && name.touched">*Name required</span>
   <br><br>
-  <input type="password" placeholder="Enter Password" name="password" ngModel>
+  <input #password="ngModel" minlength="5" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}" maxlength="20" type="password" placeholder="Enter Password" name="password" ngModel>
+  <span class="error" *ngIf="password.invalid && password.touched">*Password required</span>
   <br><br>
-  <select name="gender" ngModel>
+  <select #gender="ngModel" required name="gender" ngModel>
     <option value="">Select gender</option>
     <option value="male">male</option>
     <option value="female">female</option>
   </select>
+  <span class="error" *ngIf="gender.invalid && gender.touched">*Gender required</span>
   <br><br>
   <input type="range" min="0" max="20" name="range" ngModel>
   <br><br>
-  <button>Add user</button>
+  <button [disabled]="userform.invalid">Add user</button>
 </form>
 
 <h3>{{userdetails?.name}}</h3>
