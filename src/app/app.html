@@ -1,8 +1,7 @@
 <h1>data passing from Parent to child</h1>
-<app-user [user]="userName" city="mumbai"></app-user>
-
-<select #selecteduser (change)="onuserchange(selecteduser.value)" >
-    <option value="Anil Sidhu">Anil Sidhu</option>
-    <option value="sam bithu">sam bithu</option>
-    <option value="bunty">bunty</option>
-</select>
+@for(user of users;track user)
+{
+    <div>
+        <app-user [user]="user"></app-user>
+    </div>
+}

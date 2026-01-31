@@ -13,14 +13,11 @@ import { User } from './user/user';
 })
 // Passing data from parent to child component
 /*
-
-
+  Reuse component 
+  @Input decorator is used to read the data in child component so need to check about that
+  read all 
 
 */
 export class App {
-  userName="bruce";
-
-  onuserchange(val:string){
-   this.userName=val; 
-  }
+ users=['Anil','bunty','tata','bata','john'];
 }
