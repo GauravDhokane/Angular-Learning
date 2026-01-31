@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output, output } from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -7,5 +7,10 @@ import { Component, Input } from '@angular/core';
   styleUrl: './user.scss'
 })
 export class User {
-  @Input() user:string='';
+  users=['Anil','bunty','tata','bata','john'];
+  @Output() getUser = new EventEmitter();
+  LoadData(){
+    this.getUser.emit(this.users);
+  }
+
 }

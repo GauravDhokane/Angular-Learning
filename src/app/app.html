@@ -1,7 +1,6 @@
-<h1>data passing from Parent to child</h1>
-@for(user of users;track user)
-{
-    <div>
-        <app-user [user]="user"></app-user>
-    </div>
+<h1>data passing from child to parent</h1>
+<app-user (getUser)="handleUser($event)"></app-user>
+
+@for(user of users;track user){
+    <h1>{{user}}</h1>
 }

@@ -11,13 +11,17 @@ import { User } from './user/user';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-// Passing data from parent to child component
+// Passing data from child to parent component
 /*
-  Reuse component 
-  @Input decorator is used to read the data in child component so need to check about that
-  read all 
+  How to pass date from child to parennt check all part and also check we have
+  used 2 ways to pass data so 
 
 */
 export class App {
- users=['Anil','bunty','tata','bata','john'];
+
+  users:undefined|string[];
+  handleUser(users:string[]){
+    console.log(users);
+    this.users=users;
+  }
 }
