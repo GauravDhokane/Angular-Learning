@@ -1,26 +1,8 @@
-<h1>Forms in Angular</h1>
-<h2>Template Driven Form</h2>
-<form #userform="ngForm" (ngSubmit)="adddetails(userform.value)">
-  <input #name="ngModel" type="text" required placeholder="Enter Name" name="name" ngModel>
-  <span class="error" *ngIf="name.invalid && name.touched">*Name required</span>
-  <br><br>
-  <input #password="ngModel" minlength="5" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}" maxlength="20" type="password" placeholder="Enter Password" name="password" ngModel>
-  <span class="error" *ngIf="password.invalid && password.touched">*Password required</span>
-  <br><br>
-  <select #gender="ngModel" required name="gender" ngModel>
-    <option value="">Select gender</option>
-    <option value="male">male</option>
-    <option value="female">female</option>
-  </select>
-  <span class="error" *ngIf="gender.invalid && gender.touched">*Gender required</span>
-  <br><br>
-  <input type="range" min="0" max="20" name="range" ngModel>
-  <br><br>
-  <button [disabled]="userform.invalid">Add user</button>
-</form>
+<h1>data passing from Parent to child</h1>
+<app-user [user]="userName" city="mumbai"></app-user>
 
-<h3>{{userdetails?.name}}</h3>
-<h3>{{userdetails?.password}}</h3>
-<h3>{{userdetails?.gender}}</h3>
-<h3>{{userdetails?.range}}</h3>
-
+<select #selecteduser (change)="onuserchange(selecteduser.value)" >
+    <option value="Anil Sidhu">Anil Sidhu</option>
+    <option value="sam bithu">sam bithu</option>
+    <option value="bunty">bunty</option>
+</select>

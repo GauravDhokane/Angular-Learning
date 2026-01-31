@@ -1,28 +1,26 @@
 import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
+import { User } from './user/user';
 
 
 //below is known as Decorator ->@Component{}
 @Component({
   selector: 'app-root',
-  imports: [ReactiveFormsModule,FormsModule,NgIf],
+  imports: [User],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-// Template driven forms in Angular
+// Passing data from parent to child component
 /*
-  the froms which is completly controlled from HTML file only
-  this is widely used for basic forms only not complexed
-  //validations in template driven forms
+
 
 
 */
 export class App {
-  userdetails:any;
+  userName="bruce";
 
-  adddetails(val:NgForm){
-    console.log(val);
-    this.userdetails = val;
+  onuserchange(val:string){
+   this.userName=val; 
   }
 }
