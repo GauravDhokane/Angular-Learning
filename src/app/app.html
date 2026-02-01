@@ -1,13 +1,6 @@
 <h1>Pipes in angular</h1>
-<h2>{{title}}</h2>
-<h2>{{title | uppercase}}</h2>
-<h2>{{title | titlecase}}</h2>
-<h2>{{date}}</h2>
-<h2>{{date | date}}</h2>
-<h2>{{date | date:'fullDate'}}</h2>
-<h2>{{date | date:'hh:mm'}}</h2>
-<h2>{{date | date:'hh:mm:ss'}}</h2>
-<h2>{{amount}}</h2>
-<h2>{{amount | currency}}</h2>
-<h2>{{amount | currency:'INR'}}</h2>
-<h2>{{date | date:'fullDate' | uppercase}}</h2>
+
+<h2>Custom pipes in angular</h2>
+<h2>{{amount | currencyConverter:85}} doller</h2>
+<h2>{{amount | currencyConverter:12}} yuan</h2>
+<h2>{{amount | currencyConverter:1}} rupee</h2>
