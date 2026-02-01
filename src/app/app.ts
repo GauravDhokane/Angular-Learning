@@ -1,31 +1,34 @@
 import { CommonModule, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { afterRenderEffect, Component, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
 import { User } from './user/user';
 import { CurrencyConverterPipe } from './pipe/currency-converter-pipe';
+import {afterNextRender} from '@angular/core';
 
 
 //below is known as Decorator ->@Component{}
 @Component({
   selector: 'app-root',
-  imports: [User,CommonModule,CurrencyConverterPipe],
+  imports: [User,CommonModule,CurrencyConverterPipe,NgIf],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-// Pipes in angular
+// Component life cycle 
 /*
-  it is way of transforming data into another form 
-  for pipes we need common module
-
-  we have used multiple pipes and also 2 pipes for 1 thing 
-  read about this imp
-
-  custom pipes in angular
-  read this we have created an currency converter using this 
+  
 
 */
 export class App {
-  title = "code step by step";
-  date = new Date();
-  amount = 10;
+
+  @ViewChild('user') User!:any;
+  count=0;
+  constructor(){
+    // afterNextRender(()=>{
+    //   console.log("AfterRender",this.User.counter);
+    // })
+    //check how to use above method also and another render method also on document
+  }
+  updateCounter(){
+    this.count++;
+  }
 }

@@ -7,10 +7,18 @@ import { Component, EventEmitter, Input, Output, output } from '@angular/core';
   styleUrl: './user.scss'
 })
 export class User {
-  users=['Anil','bunty','tata','bata','john'];
-  @Output() getUser = new EventEmitter();
-  LoadData(){
-    this.getUser.emit(this.users);
-  }
 
+  @Input() counter=0;
+  constructor(){
+    console.log("constructor");
+  }
+  ngOnInit(){
+    console.log("ngoninit");
+  }
+  ngOnChanges(){
+    console.log("ngonchange")
+  }
+  ngOnDestroy(){
+    console.log("destroy");
+  }
 }
