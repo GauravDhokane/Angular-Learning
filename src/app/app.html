@@ -1,6 +1,8 @@
-<h1>Component Life Cycle in Angular</h1>
-<button (click)="updateCounter()">count:{{count}}</button>
-<div *ngIf="count<5">
-    <app-user [counter]="count"></app-user>
-</div>
+<h1>Services in Angular</h1>
+<button (click)="getProductData()">Load Data</button>
+@for(item of productData; track item)
+{
+    <h2>{{item.name}}, {{item.branch}}, {{item.price}}</h2>
+}
+
 

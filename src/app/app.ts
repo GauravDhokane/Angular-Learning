@@ -4,6 +4,7 @@ import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Valid
 import { User } from './user/user';
 import { CurrencyConverterPipe } from './pipe/currency-converter-pipe';
 import {afterNextRender} from '@angular/core';
+import { Product } from './services/product';
 
 
 //below is known as Decorator ->@Component{}
@@ -13,22 +14,29 @@ import {afterNextRender} from '@angular/core';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-// Component life cycle 
+// Services in Angular 
 /*
+  Services provides a way for you to separate angular app data and function that can be 
+  used by multiple component in your app 
+  here in the constructor we take var of service ad used that to  get data in this class only as it is private 
+  also need to check service class also 
   
 
 */
 export class App {
 
-  @ViewChild('user') User!:any;
-  count=0;
-  constructor(){
-    // afterNextRender(()=>{
-    //   console.log("AfterRender",this.User.counter);
-    // })
-    //check how to use above method also and another render method also on document
+  productData:{  //  type of productData
+    name: string;
+    branch: string;
+    price: string;
+  }[] | undefined;
+   
+  constructor(private productservice:Product){  
+
   }
-  updateCounter(){
-    this.count++;
+  getProductData(){
+    this.productData = this.productservice.getProductdata();
+    console.log(this.productData);
   }
+  
 }
