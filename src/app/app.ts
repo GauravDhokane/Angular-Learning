@@ -6,6 +6,7 @@ import { CurrencyConverterPipe } from './pipe/currency-converter-pipe';
 import {afterNextRender} from '@angular/core';
 import { Product } from './services/product';
 import { HttpClient } from '@angular/common/http';
+import { Products } from './services/productdatatype';
 
 
 //below is known as Decorator ->@Component{}
@@ -18,13 +19,14 @@ import { HttpClient } from '@angular/common/http';
 // API in Angular 
 /*
   Application programming interface
-  Calling API with services in angular got displaying data
-
+  Interface in API
+  when we are having bug object and in that we need to define datatype for that object so
+  then we use interface
 
 
 */
 export class App {
-  productdata:any=signal("");
+  productdata = signal<Products[]|undefined>(undefined);
   constructor(private productservice:Product){  
 
   }
@@ -34,4 +36,4 @@ export class App {
       this.productdata.set(data.products)
     })
   }
-}
+} 
