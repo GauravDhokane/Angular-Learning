@@ -4,15 +4,15 @@ import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Valid
 import { User } from './user/user';
 import { CurrencyConverterPipe } from './pipe/currency-converter-pipe';
 import {afterNextRender} from '@angular/core';
-import { Product } from './services/product';
 import { HttpClient } from '@angular/common/http';
-import { Products } from './services/productdatatype';
+import { RouterOutlet } from '@angular/router';
+import { ProductList } from './product-list/product-list';
 
 
 //below is known as Decorator ->@Component{}
 @Component({
   selector: 'app-root',
-  imports: [CommonModule],
+  imports: [CommonModule,RouterOutlet,ProductList],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
@@ -20,20 +20,11 @@ import { Products } from './services/productdatatype';
 /*
   Application programming interface
   Interface in API
-  when we are having bug object and in that we need to define datatype for that object so
-  then we use interface
+  Dynamic routing in angular with API
+  
 
 
 */
 export class App {
-  productdata = signal<Products[]|undefined>(undefined);
-  constructor(private productservice:Product){  
 
-  }
-  ngOnInit(){
-    this.productservice.getProductdata().subscribe((data)=>{
-      console.log(data);
-      this.productdata.set(data.products)
-    })
-  }
 } 

@@ -1,18 +1,4 @@
 <h1>Services in Angular</h1>
-<h2>Product list</h2>
-<ul>
-    @for(prod of productdata(); track prod.id){
-        <ul style="padding: 5px;">
-            <li>
-                Name: {{prod.title}}
-            </li>
-            <li>
-                Price: {{prod.price}}
-            </li>
-            <li>
-                Category: {{prod.category}}
-            </li>
-        </ul>
-    }
-</ul>
+<router-outlet></router-outlet>
+
 
