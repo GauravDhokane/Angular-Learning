@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -6,14 +7,11 @@ import { Injectable } from '@angular/core';
 
 export class Product {
   
-  constructor(){
-    console.log("product services")
+  apiUrl ="https://dummyjson.com/products";
+  constructor(private http:HttpClient){
+    
   }
   getProductdata(){
-    return[
-      {name:'mobile',branch:'samsung',price:'2000'},
-      {name:'mobile',branch:'moto',price:'10000'},
-      {name:'mobile',branch:'apple',price:'50000'}
-    ];
+    return this.http.get<any>(this.apiUrl);
   }
 }

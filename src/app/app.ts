@@ -1,42 +1,37 @@
 import { CommonModule, NgIf } from '@angular/common';
-import { afterRenderEffect, Component, ViewChild } from '@angular/core';
+import { afterRenderEffect, Component, NgModule, signal, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
 import { User } from './user/user';
 import { CurrencyConverterPipe } from './pipe/currency-converter-pipe';
 import {afterNextRender} from '@angular/core';
 import { Product } from './services/product';
+import { HttpClient } from '@angular/common/http';
 
 
 //below is known as Decorator ->@Component{}
 @Component({
   selector: 'app-root',
-  imports: [User,CommonModule,CurrencyConverterPipe,NgIf],
+  imports: [CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-// Services in Angular 
+// API in Angular 
 /*
-  Services provides a way for you to separate angular app data and function that can be 
-  used by multiple component in your app 
-  here in the constructor we take var of service ad used that to  get data in this class only as it is private 
-  also need to check service class also 
-  
+  Application programming interface
+  Calling API with services in angular got displaying data
+
+
 
 */
 export class App {
-
-  productData:{  //  type of productData
-    name: string;
-    branch: string;
-    price: string;
-  }[] | undefined;
-   
+  productdata:any=signal("");
   constructor(private productservice:Product){  
 
   }
-  getProductData(){
-    this.productData = this.productservice.getProductdata();
-    console.log(this.productData);
+  ngOnInit(){
+    this.productservice.getProductdata().subscribe((data)=>{
+      console.log(data);
+      this.productdata.set(data.products)
+    })
   }
-  
 }
