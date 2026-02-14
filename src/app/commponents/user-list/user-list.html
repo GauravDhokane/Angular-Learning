@@ -1,0 +1,13 @@
+<p>user-list works!</p>
+<h1>userlist</h1>
+<ul>
+    @for(uu of userData();track uu.id){
+        <ul>
+           <li>Name : {{ uu.name | titlecase }}</li>
+            <li>Age :{{uu.age}}</li>
+            <li>Id :{{uu.id}}</li>
+            <li>email :{{uu.email}}</li>
+        </ul>
+        <br><br>
+    }
+</ul>

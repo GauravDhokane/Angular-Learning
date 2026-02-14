@@ -7,12 +7,13 @@ import {afterNextRender} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { RouterOutlet } from '@angular/router';
 import { ProductList } from './product-list/product-list';
+import { UserList } from './commponents/user-list/user-list';
 
 
 //below is known as Decorator ->@Component{}
 @Component({
   selector: 'app-root',
-  imports: [CommonModule,RouterOutlet,ProductList],
+  imports: [CommonModule,RouterOutlet,UserList],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
