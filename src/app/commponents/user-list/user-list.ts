@@ -16,9 +16,22 @@ export class UserList {
 
   }
   ngOnInit(){
+    this.getUser()
+  }
+  getUser(){
     this.userservice.getUsers().subscribe((data)=>{
       console.log(data);
       this.userData.set(data);
     })
+  }
+  deleteUser(id:number|undefined){
+    console.log(id);
+    if(id){
+      this.userservice.deleteUser(id).subscribe((resp)=>{
+        if(resp){
+          this.getUser();
+        }
+      })
+    }
   }
 }
