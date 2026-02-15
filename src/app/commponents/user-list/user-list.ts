@@ -3,6 +3,7 @@ import { UserService } from '../../services/user-service';
 import { users } from '../../services/userdatatype';
 import { TitleCasePipe } from '@angular/common';
 
+
 @Component({
   selector: 'app-user-list',
   imports: [TitleCasePipe],

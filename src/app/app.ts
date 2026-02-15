@@ -5,7 +5,7 @@ import { User } from './user/user';
 import { CurrencyConverterPipe } from './pipe/currency-converter-pipe';
 import {afterNextRender} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { ProductList } from './product-list/product-list';
 import { UserList } from './commponents/user-list/user-list';
 
@@ -13,15 +13,19 @@ import { UserList } from './commponents/user-list/user-list';
 //below is known as Decorator ->@Component{}
 @Component({
   selector: 'app-root',
-  imports: [CommonModule,RouterOutlet,UserList],
+  imports: [CommonModule,RouterOutlet,RouterLink],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-// API in Angular 
+// API getting in Angular using our own server
 /*
-  Application programming interface
-  Interface in API
-  Dynamic routing in angular with API
+  making server and giving object in db.json file
+  to run the server --> npx json-server db.json
+  getting a data using our own API 
+  checking working of API using thunder client
+
+  //POST API
+
   
 
 
